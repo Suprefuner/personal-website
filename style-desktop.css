@@ -22,33 +22,6 @@
     border: 5px solid black;
   }
 
-  /* SECTION DARK MODE SETTING  ----------------------- */
-
-  body.dark .hero-title-group {
-    background-color: transparent;
-  }
-
-  body.dark .section--hero .btn {
-    background-color: white;
-  }
-
-  body.dark .section--hero .btn a {
-    background-color: white;
-    background-image: linear-gradient(
-      135deg,
-      var(--color-hero-light-1) 50%,
-      var(--color-black) 50%
-    );
-  }
-
-  body.dark .section--hero .btn a:hover {
-    color: black;
-  }
-
-  body.dark .work__description {
-    color: black;
-  }
-
   /* SECTION UILITY CLASS ----------------------- */
   .mobile {
     display: none;
@@ -219,19 +192,22 @@
   .section--hero .btn {
     display: inline-block;
     position: absolute;
-    background-color: var(--color-hero);
+    /* background-color: var(--color-hover); */
+    background-color: white;
 
     overflow: hidden;
-    transition: 0.2s;
+
+    /* don't know why need important */
+    transition: 0.2s !important;
+  }
+
+  .section--hero .btn:hover {
+    scale: 1.2;
   }
 
   .section--hero .btn a {
     display: inline-block;
     padding: 1rem 3rem;
-
-    background-image: linear-gradient(135deg, white 50%, var(--color-hero) 50%);
-    background-size: 250%;
-
     transition: 0.2s;
   }
 
@@ -248,7 +224,6 @@
   }
 
   .section--hero .btn-group .btn:hover a {
-    color: var(--color-hover);
     transform: translateX(-0.75rem);
     background-position: 100%;
   }
