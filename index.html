@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Web Developer | Joe Chan</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-desktop.css" />
+    <script
+      src="https://kit.fontawesome.com/ea4456f54e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      async
+      src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"
+      defer
+    ></script>
+    <script type="importmap" defer>
+      {
+        "imports": {
+          "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@0.9.144/build/runtime.js"
+        }
+      }
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
+      integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Flip.min.js"
+      integrity="sha512-byzUdBXaTSrgrlWDvkyU6TBkRSUUiI3EzVIdZtrYEUx1hFnsel9QmEs3QWpKo+8N+G9eOjSxQzFWF1PLq0+WVw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module" src="main.js" defer></script>
+  </head>
+  <!---------------------- SECTION BODY ------------------------------>
+  <body>
+    <div class="loader">
+      <img src="./assets/images/jc-logo-2.svg" alt="loading" />
+    </div>
+    <div class="social-media-container desktop">
+      <ul class="social-media-list">
+        <li class="social-media-item">
+          <a
+            href="https://github.com/Suprefuner"
+            class="social-media-link"
+            data-link="github"
+            target="_blank"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="social-media-item">
+          <a
+            href="https://www.instagram.com/suprefuner/"
+            class="social-media-link"
+            data-link="instagram"
+            target="_blank"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+        <li class="social-media-item">
+          <a
+            href="https://www.linkedin.com/in/joe-chan-66b4bb125/"
+            class="social-media-link"
+            data-link="linkedin"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="progress-bar mobile"></div>
+    <div class="progress-indicator desktop">
+      <ul class="indicator__list">
+        <li class="indicator__item">
+          <a href="#section--about" class="indicator__link"></a>
+        </li>
+        <li class="indicator__item">
+          <a href="#section--work" class="indicator__link"></a>
+        </li>
+        <li class="indicator__item">
+          <a href="#section--connect" class="indicator__link"></a>
+        </li>
+      </ul>
+    </div>
+    <!---------------------- SECTION NAV ------------------------------>
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="logo-container">
+          <img
+            src="./assets/images/jc-logo.svg"
+            alt="website logo"
+            class="jc_logo"
+          />
+        </div>
+        <ul class="nav__list">
+          <li class="nav__item btn" data-index="1" data-link="about">
+            <a href="#section--about">about</a>
+            <div class="active-nav"></div>
+          </li>
+          <li class="nav__item btn" data-index="2" data-link="work">
+            <a href="#section--work">work</a>
+          </li>
+          <li class="nav__item btn" data-index="3" data-link="connect">
+            <a href="#section--connect">connect</a>
+          </li>
+          <li class="nav__item btn" data-index="4" data-link="resume">
+            <!-- <a
+              href="./assets/Joe_Chan-Frontend_developer_CV.pdf"
+              download="Joe_Chan-Frontend_developer_CV"
+              target="_blank"
+              >resume</a
+            > -->
+            <a href="#">resume</a>
+          </li>
+          <div class="social-media-container mobile">
+            <ul class="social-media-list">
+              <li class="social-media-item">
+                <a
+                  href="https://github.com/Suprefuner"
+                  class="social-media-link"
+                  data-link="github"
+                  target="_blank"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </li>
+              <li class="social-media-item">
+                <a
+                  href="https://www.instagram.com/suprefuner/"
+                  class="social-media-link"
+                  data-link="instagram"
+                  target="_blank"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li class="social-media-item">
+                <a
+                  href="https://www.linkedin.com/in/joe-chan-66b4bb125/"
+                  class="social-media-link"
+                  data-link="linkedin"
+                  target="_blank"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </ul>
+        <div class="mode-controller"></div>
+        <div class="burger-meun mobile">
+          <i class="fas fa-bars meun-icon--mobile"></i>
+        </div>
+      </div>
+    </nav>
+    <!-- ----------------   SECTION HERO -------------------- -->
+    <section class="section--hero" id="seciton--hero">
+      <div class="hero-title-group">
+        <h2 class="hero__title">Hi! I’m Joe</h2>
+        <h2 class="hero__title">A Web Developer</h2>
+      </div>
+      <!-- <span class="hero__subtitle"> Let’s upload your idea to the web.</span> -->
+      <div class="image-container__3d-avatar mobile">
+        <img
+          src="./assets/images/mobile-hero-section-3d-avatar.png"
+          alt="3d avatar"
+          class="avatar--mobile"
+        />
+      </div>
+      <ul class="btn-group desktop">
+        <li class="btn hero__btn" data-link="about" data-index="1">
+          <a href="#section--about">about</a>
+        </li>
+        <li class="btn hero__btn" data-link="work" data-index="2">
+          <a href="#section--work">work</a>
+        </li>
+        <li class="btn hero__btn" data-link="contact" data-index="3">
+          <a href="#section--connect">connect</a>
+        </li>
+        <li class="btn hero__btn" data-link="resume" data-index="4">
+          <a href="#">resume</a>
+          <!-- <a
+            href="./assets/Joe_Chan-Frontend_developer_CV.pdf"
+            download="Joe_Chan-Frontend_developer_CV"
+            target="_blank"
+            >resume</a
+          > -->
+        </li>
+      </ul>
+      <!-- <iframe
+        src="https://my.spline.design/personalwebsite-90446322826241ea1a969bc7a9edbde6/"
+        frameborder="0"
+        width="100%"
+        height="100%"
+        class="spline--avatar desktop"
+      ></iframe> -->
+      <canvas id="canvasHero" class="spline--avatar desktop"></canvas>
+    </section>
+    <!-- ----------------   SECTION ABOUT -------------------- -->
+    <section class="section--about" id="section--about">
+      <div class="section--about-container">
+        <div class="spline--container">
+          <!-- <iframe
+            src="https://my.spline.design/about-ab39da4f5247e8724ca24b263d8f336c/"
+            frameborder="0"
+            width="100%"
+            height="100%"
+            class="spline--about desktop"
+          ></iframe> -->
+          <canvas id="canvasAbout" class="spline--about desktop"></canvas>
+        </div>
+        <div class="about-container">
+          <h2 class="section__title">about me</h2>
+          <div class="about-content">
+            <div class="image-container--profile-pic mobile">
+              <img
+                src="./assets/images/joe_personal_pic.jpg"
+                alt="personal picture"
+              />
+            </div>
+            <div class="about__description">
+              <div class="about__self-introduction">
+                Hello! I'm <span class="highlight-text">Joe</span>🧙🏻‍♂️. <br />
+                I'm a frontend web developer based in HK <br />
+                I ❤️ building creative things on the web. <br />
+                I'm currently on my way to become a web development master.
+                <br />Come and Join my party!!!
+              </div>
+              <div class="about__skill-set">
+                <ul class="skill-set__list">
+                  <li class="skill-set__item">
+                    <!-- <i class="fas fa-angle-double-right"></i> -->
+                    ⚔️ HTML
+                  </li>
+                  <li class="skill-set__item">
+                    <!-- <i class="fas fa-angle-double-right"></i> -->⚔️ CSS
+                  </li>
+                  <li class="skill-set__item">
+                    <!-- <i class="fas fa-angle-double-right"></i> -->⚔️ SASS
+                  </li>
+                  <li class="skill-set__item">
+                    <!-- <i class="fas fa-angle-double-right"></i> -->⚔️
+                    JavaScript
+                  </li>
+                  <li class="skill-set__item">
+                    <!-- <i class="fas fa-angle-double-right"></i> -->⚔️
+                    React.js
+                  </li>
+                  <li class="skill-set__item">
+                    <!-- <i class="fas fa-angle-double-right"></i> -->⚔️
+                    Tailwind CSS
+                  </li>
+                  <li class="skill-set__item">
+                    <!-- <i class="fas fa-angle-double-right"></i> -->⚔️ Git
+                  </li>
+                  <li class="skill-set__item">
+                    <!-- <i class="fas fa-angle-double-right"></i> -->⚔️ Github
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ----------------   SECTION WORK -------------------- -->
+    <section class="section--work" id="section--work">
+      <div class="section--work-container">
+        <div class="work-container">
+          <div class="section__title">work</div>
+          <div class="work-content">
+            <ul class="work__list">
+              <!-- <li class="work__item">hiking test</li>
+              <li class="work__item">image filter presentation tool</li>
+              <li class="work__item">sorting methods presentation tool</li>
+              <li class="work__item">unicode converter</li>
+              <li class="work__item">movie website</li>
+              <li class="work__item">movie website</li>
+              <li class="work__item">movie website</li>
+              <li class="work__item">movie website</li> -->
+            </ul>
+
+            <div class="work__detail">
+              <div class="work-container">
+                <!-- <div class="image-container--work-image image-desktop desktop">
+                  <img
+                    src="./assets/images/work_images/image_filter_tool/image_filter_tool-1.png"
+                    alt="work image"
+                  />
+                </div>
+                <div class="image-container--work-image">
+                  <img
+                    src="./assets/images/work_images/hiking_personality_test/hiking_personality_test-2.png"
+                    alt="work image"
+                  />
+                </div>
+                <div class="work__description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Tempore consequatur aliquam impedit alias pariatur voluptatum.
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ----------------   SECTION CONNECT -------------------- -->
+    <section class="section--connect" id="section--connect">
+      <div class="section--connect-container">
+        <div class="connect-container">
+          <h2 class="section__title">Connect</h2>
+          <div class="connect-content">
+            <div class="connect-description">
+              <h3 class="heading--3">let's connect</h3>
+              <p class="heading--p">I'm interested about</p>
+              <ul class="interested__list">
+                <li class="interested__item shadow-style">web development</li>
+                <li class="interested__item shadow-style">UI/UX design</li>
+                <li class="interested__item shadow-style">burger</li>
+                <li class="interested__item shadow-style">board game</li>
+              </ul>
+            </div>
+            <form class="connect-form">
+              <div class="input-group input-group--title">
+                <input type="text" class="title" id="title" placeholder=" " />
+                <label for="title">title</label>
+              </div>
+              <div class="input-group input-group--name">
+                <input
+                  type="text"
+                  class="name"
+                  id="name"
+                  required
+                  placeholder=" "
+                />
+                <label for="name">name</label>
+              </div>
+              <div class="input-group input-group--email">
+                <input
+                  type="email"
+                  class="email"
+                  id="email"
+                  required
+                  placeholder=" "
+                />
+                <label for="email">email</label>
+              </div>
+              <div class="input-group input-group--message">
+                <textarea
+                  name="message"
+                  id="message"
+                  cols="30"
+                  rows="10"
+                  required
+                  placeholder=" "
+                ></textarea>
+                <label for="message">Message</label>
+              </div>
+              <button class="btn--submit shadow-style">send</button>
+            </form>
+          </div>
+        </div>
+        <div class="spline--container desktop">
+          <!-- <iframe
+            src="https://my.spline.design/emailanimation-19a42ec7a172d39290537d410b36bf04/"
+            frameborder="0"
+            width="100%"
+            height="100%"
+          ></iframe> -->
+
+          <canvas id="canvasEmail" class="spline--email desktop"></canvas>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-container">
+        <span class="footer-content"> &copy; 2022 Joe Chan </span>
+      </div>
+    </footer>
+  </body>
+</html>
