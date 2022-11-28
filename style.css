@@ -9,11 +9,11 @@
   --color-about: #fdcdd1;
   --color-about-dark-1: #ffa4ac;
 
-  --color-work: #c6ecfc;
-  --color-work-dark-1: #93d5f1;
+  --color-connect: #c6ecfc;
+  --color-connect-dark-1: #93d5f1;
 
-  --color-connect: #ccffd3;
-  --color-connect-dark-1: #a7f3b1;
+  --color-work: #ccffd3;
+  --color-work-dark-1: #a7f3b1;
 
   /* FONT */
   --font-display: "Poppins", sans-serif;
@@ -45,8 +45,8 @@ body {
 }
 
 section {
-  border-bottom-left-radius: 50% 5%;
-  border-bottom-right-radius: 50% 5%;
+  /* border-bottom-left-radius: 50% 5%;
+  border-bottom-right-radius: 50% 5%; */
 
   outline: 5px solid var(--shadow-color);
 }
@@ -152,6 +152,7 @@ a:visited {
 /* SECTION NAVBAR ----------------------------------- */
 .nav {
   position: fixed;
+  top: 0;
   z-index: 2000;
 
   width: 100vw;
@@ -175,14 +176,48 @@ a:visited {
   width: 5rem;
 }
 
-.mode-controller {
-  width: 5rem;
-  height: 2rem;
+.mode-container {
+  /* width: 10rem; */
+  /* FIXME why 4.35rem ?????? */
+  width: 4.35rem;
+  aspect-ratio: 1;
 
   margin-left: auto;
+  /* padding: 0.5rem; */
 
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 5rem;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.mode-controller {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.mode-controller.dark {
+  transform: translateX(-5.2rem);
+}
+
+.icon-mode {
+  display: inline-block;
+  font-size: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  /* border: 1px solid red; */
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.mode-controller:hover .icon-mode {
+  scale: 0.9;
 }
 
 .nav__list {
@@ -290,9 +325,9 @@ a:visited {
 /* SECTION HERO ----------------------------------- */
 
 .section--hero {
-  --shadow-color: var(--color-hero-dark-1);
+  /* --shadow-color: var(--color-hero-dark-1); */
   /* --shadow-color: var(var(--color-hero-dark-1)); */
-  background-color: var(--color-hero);
+  /* background-color: var(--color-hero); */
 
   height: 100vh;
   position: relative;
@@ -300,14 +335,12 @@ a:visited {
 
   overflow: hidden;
 
-  /* background: radial-gradient(
+  background: radial-gradient(
     circle,
-    #ffefd6 20%,
-    #ffedd1 20% 40%,
-    #ffeccd 40% 60%,
-    #ffeac8 60% 80%,
-    #ffe8c3 80%
-  ); */
+    #ffefd6 30%,
+    #ffe9c7 30% 60%,
+    #fde3ba 60%
+  );
 }
 
 .hero-title-group {
@@ -359,7 +392,7 @@ a:visited {
 
 /* SECTION ABOUT ----------------------------------- */
 .section--about {
-  --shadow-color: var(--color-about-dark-1);
+  /* --shadow-color: var(--color-about-dark-1); */
 
   display: grid;
   place-content: center;
@@ -408,7 +441,7 @@ a:visited {
 /* SECTION WORK ----------------------------------- */
 
 .section--work {
-  --shadow-color: var(--color-work-dark-1);
+  /* --shadow-color: var(--color-work-dark-1); */
   background-color: var(--color-work);
 
   position: relative;
@@ -476,7 +509,7 @@ a:visited {
 /* SECTION CONNECT ----------------------------------- */
 .section--connect {
   --bg-color: var(--color-connect);
-  --shadow-color: var(--color-connect-dark-1);
+  /* --shadow-color: var(--color-connect-dark-1); */
 
   display: grid;
   place-content: center;
@@ -596,12 +629,21 @@ a:visited {
   font-size: 2rem;
   font-weight: var(--fw-bold);
   text-transform: uppercase;
+
+  background-image: linear-gradient(135deg, white 50%, black 50%);
+  background-size: 250%;
+
+  transition: 0.4s;
+}
+
+.btn--submit:hover {
+  color: white;
+  background-position: 100%;
 }
 
 /* SECTION FOOTER ----------------------------------- */
 
 .footer {
-  margin-top: -4rem;
   padding-top: 10rem;
 
   position: relative;

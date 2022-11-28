@@ -20,6 +20,8 @@ const canvasHero = document.getElementById("canvasHero")
 const workList = document.querySelector(".work__list")
 const workDetail = document.querySelector(".work__detail .work-container")
 
+const modeController = document.querySelector(".mode-controller")
+
 let diffXArray
 const topFromBrowser = 10
 
@@ -206,8 +208,10 @@ const sectionObserveFunc = function (entries) {
     if (entry.isIntersecting) {
       indicatorLinks.forEach((link, i) => {
         link.classList.remove("active")
+        navBtns[i].classList.remove("active")
         if (link.getAttribute("href").slice(1) === entry.target.id) {
           link.classList.add("active")
+          navBtns[i].classList.add("active")
           activateBtnAnimation(navBtns[i])
         }
       })
@@ -313,3 +317,11 @@ workList.addEventListener("click", (e) => {
   if (e.target.classList.contains("work__item"))
     showCurrentWork(workArray, e.target)
 })
+
+// control dark light mode >>>>>>>>>>>>>>>>>>>>>>>>>>>>
+const toggleMode = function (e) {
+  e.currentTarget.classList.toggle("dark")
+  // console.log(e.currentTarget)
+}
+
+modeController.addEventListener("click", toggleMode)

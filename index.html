@@ -38,7 +38,7 @@
     <script type="module" src="main.js" defer></script>
   </head>
   <!---------------------- SECTION BODY ------------------------------>
-  <body>
+  <body class="dark">
     <div class="loader">
       <img src="./assets/images/jc-logo-2.svg" alt="loading" />
     </div>
@@ -155,7 +155,13 @@
             </ul>
           </div>
         </ul>
-        <div class="mode-controller"></div>
+        <div class="mode-container">
+          <div class="mode-controller dark">
+            <i class="fas fa-sun icon--sun active icon-mode"></i>
+            <i class="fas fa-moon icon--moon icon-mode"></i>
+          </div>
+          <!-- <span class="circle"></span>s -->
+        </div>
         <div class="burger-meun mobile">
           <i class="fas fa-bars meun-icon--mobile"></i>
         </div>
@@ -167,7 +173,9 @@
         <h2 class="hero__title">Hi! I’m Joe</h2>
         <h2 class="hero__title">A Web Developer</h2>
       </div>
-      <!-- <span class="hero__subtitle"> Let’s upload your idea to the web.</span> -->
+      <!-- prettier-ignore -->
+      <span class="hero__subtitle mobile">
+        Let’s upload your idea to the web.</span>
       <div class="image-container__3d-avatar mobile">
         <img
           src="./assets/images/mobile-hero-section-3d-avatar.png"

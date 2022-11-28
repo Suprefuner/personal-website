@@ -11,14 +11,14 @@
       var(--section-max-width)
     );
 
-    --color-hover: #ec3a61;
+    --color-hover: #f84874;
   }
 
   /* SECTION GENERAL SETTING  ----------------------- */
 
   section {
-    border-bottom-left-radius: 30% 30%;
-    border-bottom-right-radius: 30% 30%;
+    margin: 5rem;
+    border: 5px solid black;
   }
 
   /* SECTION UILITY CLASS ----------------------- */
@@ -101,6 +101,10 @@
     font-weight: var(--fw-bold);
   }
 
+  .nav__item.active a {
+    text-transform: uppercase;
+  }
+
   .nav__item.active a:before,
   .nav__item a:hover:before {
     opacity: 0;
@@ -128,7 +132,6 @@
     width: min-content;
 
     transform: translate(0, 0);
-    /* background-color: red; */
   }
 
   .social-media-list {
@@ -160,11 +163,13 @@
   .section--hero {
     --gutter: 1rem;
     padding-top: 10rem;
+    margin-top: 8rem;
+    /* margin-top: 0; */
 
-    border-bottom-left-radius: 30% 30%;
-    border-bottom-right-radius: 30% 30%;
+    height: calc(100vh - 8rem);
 
-    /* background-color: #fcf0de; */
+    /* border-bottom-left-radius: 30% 30%;
+    border-bottom-right-radius: 30% 30%; */
   }
 
   .hero-title-group {
@@ -172,6 +177,7 @@
     transform: translateX(0);
 
     margin: auto;
+    margin-top: -5rem;
     border: none;
     padding: 0;
     background: none;
@@ -192,14 +198,26 @@
     transform: translate(-50%, -50%);
   }
 
-  .section--hero .btn-group .btn {
+  .section--hero .btn {
+    display: inline-block;
     position: absolute;
+    background-color: rgb(255, 197, 197);
+
+    overflow: hidden;
     transition: 0.2s;
   }
 
-  .section--hero .btn-group .hero__btn a {
+  .section--hero .btn a {
     display: inline-block;
     padding: 1rem 3rem;
+
+    background-image: linear-gradient(
+      135deg,
+      white 50%,
+      rgb(255, 197, 197) 50%
+    );
+    background-size: 250%;
+
     transition: 0.2s;
   }
 
@@ -215,7 +233,9 @@
   }
 
   .section--hero .btn-group .btn:hover a {
+    color: var(--color-hover);
     transform: translateX(-0.75rem);
+    background-position: 100%;
   }
 
   .section--hero .btn[data-link="about"] {
@@ -251,7 +271,7 @@
     /* 100vh - hero section empty space - navbar space */
     height: calc(100vh + 15.5rem - 7rem);
 
-    border-radius: 100px;
+    /* border-radius: 100px; */
   }
 
   .section--about-container {
@@ -304,7 +324,8 @@
 
   /* SECTION WORK ----------------------------------- */
   .section--work {
-    border-radius: 100px;
+    height: 100vh;
+    /* border-radius: 100px; */
   }
 
   .section--work-container {
@@ -398,11 +419,13 @@
 
   /* SECTION CONNECT ----------------------------------- */
   .section--connect {
-    border-radius: 100px;
+    /* border-radius: 100px; */
 
     /* make spline scrollable */
     position: relative;
     z-index: 0;
+
+    overflow: hidden;
   }
 
   .section--connect-container {
