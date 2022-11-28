@@ -7,6 +7,7 @@
     <title>Frontend Web Developer | Joe Chan</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="style-desktop.css" />
+    <link rel="stylesheet" href="style-dark-mode.css" />
     <script
       src="https://kit.fontawesome.com/ea4456f54e.js"
       crossorigin="anonymous"
@@ -38,67 +39,22 @@
     <script type="module" src="main.js" defer></script>
   </head>
   <!---------------------- SECTION BODY ------------------------------>
-  <body class="dark">
+  <body>
     <div class="loader">
       <img src="./assets/images/jc-logo-2.svg" alt="loading" />
     </div>
-    <div class="social-media-container desktop">
-      <ul class="social-media-list">
-        <li class="social-media-item">
-          <a
-            href="https://github.com/Suprefuner"
-            class="social-media-link"
-            data-link="github"
-            target="_blank"
-          >
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-        <li class="social-media-item">
-          <a
-            href="https://www.instagram.com/suprefuner/"
-            class="social-media-link"
-            data-link="instagram"
-            target="_blank"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
-        </li>
-        <li class="social-media-item">
-          <a
-            href="https://www.linkedin.com/in/joe-chan-66b4bb125/"
-            class="social-media-link"
-            data-link="linkedin"
-            target="_blank"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
     <div class="progress-bar mobile"></div>
-    <div class="progress-indicator desktop">
-      <ul class="indicator__list">
-        <li class="indicator__item">
-          <a href="#section--about" class="indicator__link"></a>
-        </li>
-        <li class="indicator__item">
-          <a href="#section--work" class="indicator__link"></a>
-        </li>
-        <li class="indicator__item">
-          <a href="#section--connect" class="indicator__link"></a>
-        </li>
-      </ul>
-    </div>
     <!---------------------- SECTION NAV ------------------------------>
     <nav class="nav">
       <div class="nav-container">
         <div class="logo-container">
-          <img
-            src="./assets/images/jc-logo.svg"
-            alt="website logo"
-            class="jc_logo"
-          />
+          <a href="#" class="logo">
+            <img
+              src="./assets/images/jc-logo-2.svg"
+              alt="website logo"
+              class="jc_logo"
+            />
+          </a>
         </div>
         <ul class="nav__list">
           <li class="nav__item btn" data-index="1" data-link="about">
@@ -112,55 +68,20 @@
             <a href="#section--connect">connect</a>
           </li>
           <li class="nav__item btn" data-index="4" data-link="resume">
-            <!-- <a
+            <a
               href="./assets/Joe_Chan-Frontend_developer_CV.pdf"
               download="Joe_Chan-Frontend_developer_CV"
               target="_blank"
               >resume</a
-            > -->
-            <a href="#">resume</a>
+            >
+            <!-- <a href="#">resume</a> -->
           </li>
-          <div class="social-media-container mobile">
-            <ul class="social-media-list">
-              <li class="social-media-item">
-                <a
-                  href="https://github.com/Suprefuner"
-                  class="social-media-link"
-                  data-link="github"
-                  target="_blank"
-                >
-                  <i class="fab fa-github"></i>
-                </a>
-              </li>
-              <li class="social-media-item">
-                <a
-                  href="https://www.instagram.com/suprefuner/"
-                  class="social-media-link"
-                  data-link="instagram"
-                  target="_blank"
-                >
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
-              <li class="social-media-item">
-                <a
-                  href="https://www.linkedin.com/in/joe-chan-66b4bb125/"
-                  class="social-media-link"
-                  data-link="linkedin"
-                  target="_blank"
-                >
-                  <i class="fab fa-linkedin"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
         </ul>
         <div class="mode-container">
-          <div class="mode-controller dark">
+          <div class="mode-controller">
             <i class="fas fa-sun icon--sun active icon-mode"></i>
             <i class="fas fa-moon icon--moon icon-mode"></i>
           </div>
-          <!-- <span class="circle"></span>s -->
         </div>
         <div class="burger-meun mobile">
           <i class="fas fa-bars meun-icon--mobile"></i>
@@ -173,9 +94,9 @@
         <h2 class="hero__title">Hi! I’m Joe</h2>
         <h2 class="hero__title">A Web Developer</h2>
       </div>
-      <!-- prettier-ignore -->
       <span class="hero__subtitle mobile">
-        Let’s upload your idea to the web.</span>
+        Let’s upload your idea to the web.</span
+      >
       <div class="image-container__3d-avatar mobile">
         <img
           src="./assets/images/mobile-hero-section-3d-avatar.png"
@@ -194,13 +115,13 @@
           <a href="#section--connect">connect</a>
         </li>
         <li class="btn hero__btn" data-link="resume" data-index="4">
-          <a href="#">resume</a>
-          <!-- <a
+          <!-- <a href="#">resume</a> -->
+          <a
             href="./assets/Joe_Chan-Frontend_developer_CV.pdf"
             download="Joe_Chan-Frontend_developer_CV"
             target="_blank"
             >resume</a
-          > -->
+          >
         </li>
       </ul>
       <!-- <iframe
@@ -227,7 +148,7 @@
         </div>
         <div class="about-container">
           <h2 class="section__title">about me</h2>
-          <div class="about-content">
+          <div class="about-content section-content">
             <div class="image-container--profile-pic mobile">
               <img
                 src="./assets/images/joe_personal_pic.jpg"
@@ -244,34 +165,14 @@
               </div>
               <div class="about__skill-set">
                 <ul class="skill-set__list">
-                  <li class="skill-set__item">
-                    <!-- <i class="fas fa-angle-double-right"></i> -->
-                    ⚔️ HTML
-                  </li>
-                  <li class="skill-set__item">
-                    <!-- <i class="fas fa-angle-double-right"></i> -->⚔️ CSS
-                  </li>
-                  <li class="skill-set__item">
-                    <!-- <i class="fas fa-angle-double-right"></i> -->⚔️ SASS
-                  </li>
-                  <li class="skill-set__item">
-                    <!-- <i class="fas fa-angle-double-right"></i> -->⚔️
-                    JavaScript
-                  </li>
-                  <li class="skill-set__item">
-                    <!-- <i class="fas fa-angle-double-right"></i> -->⚔️
-                    React.js
-                  </li>
-                  <li class="skill-set__item">
-                    <!-- <i class="fas fa-angle-double-right"></i> -->⚔️
-                    Tailwind CSS
-                  </li>
-                  <li class="skill-set__item">
-                    <!-- <i class="fas fa-angle-double-right"></i> -->⚔️ Git
-                  </li>
-                  <li class="skill-set__item">
-                    <!-- <i class="fas fa-angle-double-right"></i> -->⚔️ Github
-                  </li>
+                  <li class="skill-set__item">⚔️ HTML</li>
+                  <li class="skill-set__item">⚔️ CSS</li>
+                  <li class="skill-set__item">⚔️ SASS</li>
+                  <li class="skill-set__item">⚔️ JavaScript</li>
+                  <li class="skill-set__item">⚔️ React.js</li>
+                  <li class="skill-set__item">⚔️ Tailwind CSS</li>
+                  <li class="skill-set__item">⚔️ Git</li>
+                  <li class="skill-set__item">⚔️ Github</li>
                 </ul>
               </div>
             </div>
@@ -284,36 +185,13 @@
       <div class="section--work-container">
         <div class="work-container">
           <div class="section__title">work</div>
-          <div class="work-content">
+          <div class="work-content section-content">
             <ul class="work__list">
-              <!-- <li class="work__item">hiking test</li>
-              <li class="work__item">image filter presentation tool</li>
-              <li class="work__item">sorting methods presentation tool</li>
-              <li class="work__item">unicode converter</li>
-              <li class="work__item">movie website</li>
-              <li class="work__item">movie website</li>
-              <li class="work__item">movie website</li>
-              <li class="work__item">movie website</li> -->
+              <!-- generate by JS -->
             </ul>
-
             <div class="work__detail">
               <div class="work-container">
-                <!-- <div class="image-container--work-image image-desktop desktop">
-                  <img
-                    src="./assets/images/work_images/image_filter_tool/image_filter_tool-1.png"
-                    alt="work image"
-                  />
-                </div>
-                <div class="image-container--work-image">
-                  <img
-                    src="./assets/images/work_images/hiking_personality_test/hiking_personality_test-2.png"
-                    alt="work image"
-                  />
-                </div>
-                <div class="work__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tempore consequatur aliquam impedit alias pariatur voluptatum.
-                </div> -->
+                <!-- generate by JS -->
               </div>
             </div>
           </div>
@@ -325,7 +203,7 @@
       <div class="section--connect-container">
         <div class="connect-container">
           <h2 class="section__title">Connect</h2>
-          <div class="connect-content">
+          <div class="connect-content section-content">
             <div class="connect-description">
               <h3 class="heading--3">let's connect</h3>
               <p class="heading--p">I'm interested about</p>
@@ -383,7 +261,6 @@
             width="100%"
             height="100%"
           ></iframe> -->
-
           <canvas id="canvasEmail" class="spline--email desktop"></canvas>
         </div>
       </div>

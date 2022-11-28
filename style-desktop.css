@@ -17,8 +17,36 @@
   /* SECTION GENERAL SETTING  ----------------------- */
 
   section {
+    height: calc(100vh - 7rem);
     margin: 5rem;
     border: 5px solid black;
+  }
+
+  /* SECTION DARK MODE SETTING  ----------------------- */
+
+  body.dark .hero-title-group {
+    background-color: transparent;
+  }
+
+  body.dark .section--hero .btn {
+    background-color: white;
+  }
+
+  body.dark .section--hero .btn a {
+    background-color: white;
+    background-image: linear-gradient(
+      135deg,
+      var(--color-hero-light-1) 50%,
+      var(--color-black) 50%
+    );
+  }
+
+  body.dark .section--hero .btn a:hover {
+    color: black;
+  }
+
+  body.dark .work__description {
+    color: black;
   }
 
   /* SECTION UILITY CLASS ----------------------- */
@@ -32,11 +60,11 @@
 
   .btn {
     width: max-content;
-    background-color: white;
+    background-color: var(--color-white);
 
-    border: 3px solid black;
+    border: 3px solid var(--color-black);
 
-    box-shadow: 5px 5px 0 black;
+    box-shadow: var(--box-shadow-normal);
     cursor: pointer;
   }
 
@@ -47,11 +75,6 @@
   }
 
   /* SECTION NAVBAR ----------------------- */
-
-  .nav {
-    /* background-color: rgb(255, 255, 255, 0.5); */
-    backdrop-filter: blur(20px);
-  }
 
   .nav-container {
     margin: auto;
@@ -74,10 +97,9 @@
     z-index: 2200;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 3rem;
 
+    background-color: transparent;
     border: none;
   }
 
@@ -86,7 +108,6 @@
     transform: translateX(0);
     margin: 0;
     transition: transform 0.2s;
-    /* remove setting from mobile version */
 
     position: relative;
   }
@@ -115,11 +136,11 @@
     position: absolute;
     top: auto;
     left: 0;
-    bottom: -1.3rem;
+    bottom: -1.4rem;
 
     width: 100%;
     height: 6px;
-    background-color: black;
+    background-color: var(--color-black);
     border-radius: 1rem;
   }
 
@@ -130,7 +151,6 @@
     z-index: 1900;
 
     width: min-content;
-
     transform: translate(0, 0);
   }
 
@@ -145,9 +165,10 @@
     content: "";
     position: absolute;
     bottom: -110%;
+
     width: 3px;
     height: 100%;
-    background-color: black;
+    background-color: var(--color-black);
   }
 
   .social-media-link {
@@ -164,12 +185,8 @@
     --gutter: 1rem;
     padding-top: 10rem;
     margin-top: 8rem;
-    /* margin-top: 0; */
 
     height: calc(100vh - 8rem);
-
-    /* border-bottom-left-radius: 30% 30%;
-    border-bottom-right-radius: 30% 30%; */
   }
 
   .hero-title-group {
@@ -178,9 +195,10 @@
 
     margin: auto;
     margin-top: -5rem;
-    border: none;
     padding: 0;
+
     background: none;
+    border: none;
   }
 
   .hero__title {
@@ -201,7 +219,7 @@
   .section--hero .btn {
     display: inline-block;
     position: absolute;
-    background-color: rgb(255, 197, 197);
+    background-color: var(--color-hero);
 
     overflow: hidden;
     transition: 0.2s;
@@ -211,16 +229,13 @@
     display: inline-block;
     padding: 1rem 3rem;
 
-    background-image: linear-gradient(
-      135deg,
-      white 50%,
-      rgb(255, 197, 197) 50%
-    );
+    background-image: linear-gradient(135deg, white 50%, var(--color-hero) 50%);
     background-size: 250%;
 
     transition: 0.2s;
   }
 
+  /* create "//" before title */
   .section--hero .btn-group a:before {
     content: "//";
     display: inline-block;
@@ -264,33 +279,14 @@
   }
 
   /* SECTION ABOUT ----------------------------------- */
-  .section--about {
-    /* to cover the empty space from hero section */
-    margin-top: -15rem;
-    padding-top: 15rem;
-    /* 100vh - hero section empty space - navbar space */
-    height: calc(100vh + 15.5rem - 7rem);
-
-    /* border-radius: 100px; */
-  }
-
   .section--about-container {
-    max-width: 140rem;
-    min-height: 80rem;
-    padding-block: 10rem;
-    margin: auto;
-
     display: flex;
+    max-width: var(--max-width);
+    min-height: 65rem;
   }
 
   .section--about .spline--container {
-    /* width: max(50%, 480px); */
     width: 40%;
-
-    /* cover the spline logo at bottom right cover */
-    clip-path: polygon(0 8%, 100% 8%, 100% 90%, 0 90%);
-    /* background-color: green; */
-
     position: relative;
   }
 
@@ -323,11 +319,6 @@
   }
 
   /* SECTION WORK ----------------------------------- */
-  .section--work {
-    height: 100vh;
-    /* border-radius: 100px; */
-  }
-
   .section--work-container {
     width: var(--section-width);
   }
@@ -360,7 +351,8 @@
   .work__detail .work-container > * {
     position: absolute;
     box-shadow: 1rem 1rem 0 black;
-    border: 5px solid black;
+    border: var(--border-md);
+
     width: 100%;
     transition: 0.2s;
     overflow: hidden;
@@ -387,6 +379,7 @@
   .image-container--work-image.narrow {
     top: 30%;
     left: 50%;
+
     width: 40%;
     aspect-ratio: 9/16;
     overflow: hidden;
@@ -411,7 +404,7 @@
   .work__detail .work-container > *:last-child {
     width: 75%;
     background-color: white;
-    border: 5px solid black;
+    border: var(--border-md);
 
     bottom: -3rem;
     left: -10%;
@@ -419,8 +412,6 @@
 
   /* SECTION CONNECT ----------------------------------- */
   .section--connect {
-    /* border-radius: 100px; */
-
     /* make spline scrollable */
     position: relative;
     z-index: 0;
@@ -443,48 +434,7 @@
     z-index: -100;
   }
 
-  .section--connect .spline--container:before {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 20rem;
-    height: 6rem;
-    background-color: var(--bg-color);
-  }
-
   .btn--submit {
     cursor: pointer;
-  }
-
-  /* SECTION FOOTER ----------------------------------- */
-
-  .progress-indicator {
-    position: fixed;
-    top: 50%;
-    right: 5vw;
-    z-index: 2000;
-    transform: translateY(-50%);
-  }
-
-  .indicator__list {
-    display: grid;
-    gap: 3rem;
-  }
-
-  .indicator__link {
-    display: inline-block;
-    width: 2rem;
-    aspect-ratio: 1;
-
-    border-radius: 50%;
-    border: 5px solid black;
-
-    transition: 0.2s;
-  }
-
-  .indicator__link.active {
-    rotate: 45deg;
-    border-radius: 0;
   }
 }
