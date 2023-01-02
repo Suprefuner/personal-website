@@ -174,7 +174,8 @@
   }
 
   .hero__title {
-    font-size: 12rem;
+    font-size: 13vh;
+    /* font-size: 12rem; */
     text-align: center;
 
     color: var(--color-hover);
@@ -191,13 +192,9 @@
   .section--hero .btn {
     display: inline-block;
     position: absolute;
-    /* background-color: var(--color-hover); */
     background-color: white;
 
     overflow: hidden;
-
-    /* don't know why need important */
-    /* transition: 0.2s !important; */
   }
 
   .section--hero .btn:hover {
@@ -243,7 +240,7 @@
   }
 
   .section--hero .btn[data-link="resume"] {
-    top: 30rem;
+    top: 18rem;
     left: 30rem;
   }
 

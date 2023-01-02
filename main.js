@@ -128,6 +128,7 @@ const checkDeviceSize = function (deviceWidth) {
     diffXArray = setNavBtnsPositions()
     navBtns.forEach((btn, i) => {
       btn.classList.add("hidden")
+      heroBtns[i].style.transition = "all 0.2s"
       // move nav buttons to hero buttons' x position (6px = 2side of border width)
       btn.style.transform = `translateX(${diffXArray[i] - 6}px)`
     })
@@ -139,6 +140,7 @@ const checkDeviceSize = function (deviceWidth) {
 }
 
 checkDeviceSize(deviceWidth)
+console.log(diffXArray)
 
 const mediaObserver = new ResizeObserver((entries) => {
   const [entry] = entries
@@ -235,7 +237,7 @@ const btnObserveFunc = function (entries) {
       navTarget.style.transform = `translateX(0)`
     } else {
       entry.target.classList.remove("hidden")
-      entry.target.style.transition = `opacity 0s .2s`
+      entry.target.style.transition = `opacity 0s .2s, scale .2s`
 
       navTarget.classList.add("hidden")
       navTarget.style.transform = `translateX(${diffXArray[index]}px)`
