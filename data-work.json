@@ -1,46 +1,68 @@
 [
   {
     "id": 0,
+    "projectName": "xtore e-commerce",
+    "image": [
+      "./assets/images/work_images/xtore/xtore-2.png",
+      "./assets/images/work_images/xtore/xtore.png"
+    ],
+    "description": "A scenario based fashion E-commerce website. Provide Authentication, products, cart, favorite, checkout features.",
+    "technical": ["html", "css", "javascript", "react", "redux"],
+    "url": "https://xtore-ecommerce.netlify.app/"
+  },
+  {
+    "id": 1,
     "projectName": "hiking personality test",
     "image": [
       "./assets/images/work_images/hiking_personality_test/hiking_personality_test-1.png",
       "./assets/images/work_images/hiking_personality_test/hiking_personality_test-2.png"
     ],
-    "description": "Hiking ipsum dolor sit amet consectetur adipisicing elit. Tempore consequatur aliquam impedit alias pariatur voluptatum."
+    "description": "A scenario based hiking personality test aims to raise environmental awareness. Shared on My Nature Diary and Oasistrek Instagram and Facebook",
+    "technical": ["html", "css", "javascript"],
+    "url": "https://suprefuner.github.io/final-project-what-type-of-rubbish-you-are/"
   },
   {
-    "id": 1,
+    "id": 2,
     "projectName": "image filter tool",
     "image": [
       "./assets/images/work_images/image_filter_tool/image_filter_tool-1.png",
       "./assets/images/work_images/image_filter_tool/image_filter_tool-2.png"
     ],
-    "description": "Image test sit amet consectetur adipisicing elit. Tempore consequatur aliquam impedit alias pariatur voluptatum."
+    "description": "Mini project to show how a computer forms an image and how the black and white, horizontal reflection, and blurry image filters work behind the scenes.",
+    "technical": ["html", "css", "javascript"],
+    "url": "https://suprefuner.github.io/image-filter-presentation-tool/"
   },
   {
-    "id": 2,
+    "id": 3,
     "projectName": "sorting algorithms tool",
     "image": [
       "./assets/images/work_images/sorting_algorithms_tool/sorting_algorithms_tool-1.png"
     ],
-    "description": "Sorting tool dolor sit amet consectetur adipisicing elit. Tempore consequatur aliquam impedit alias pariatur voluptatum."
+    "description": "Mini project to demonstrate 3 different sorting algorithms with a list of numbers. Adding drag and drop to increase the interactivity.",
+
+    "technical": ["html", "css", "javascript"],
+    "url": "https://suprefuner.github.io/algo-presentation-tool/"
   },
   {
-    "id": 3,
+    "id": 4,
     "projectName": "unicode tool",
     "image": [
       "./assets/images/work_images/unicode_tool/unicode_tool-1.png",
       "./assets/images/work_images/unicode_tool/unicode_tool-2.png"
     ],
-    "description": "Unicode dolor sit amet consectetur adipisicing elit. Tempore consequatur aliquam impedit alias pariatur voluptatum."
+    "description": "Mini project to introduce the history of Unicode. Allows user to convert string to Unicode and vice versa. Adding the slider effect and animated background to make it more fun.",
+    "technical": ["html", "css", "javascript"],
+    "url": "https://suprefuner.github.io/unicode-presentation-tool/"
   },
   {
-    "id": 4,
+    "id": 5,
     "projectName": "movie website",
     "image": [
       "./assets/images/work_images/movie_website/movie_website-1.png",
       "./assets/images/work_images/movie_website/movie_website-2.png"
     ],
-    "description": "Movie dolor sit amet consectetur adipisicing elit. Tempore consequatur aliquam impedit alias pariatur voluptatum."
+    "description": "Generation HK group project, a movie website. We've chosen the classic Hong Kong movie, 'young and dangerous' as our main theme. My part is the hero section.",
+    "technical": ["html", "css"],
+    "url": "https://suprefuner.github.io/generation-movie-group-project/"
   }
 ]

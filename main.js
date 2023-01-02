@@ -107,7 +107,7 @@ modeController.addEventListener("click", toggleMode)
 
 // CHECK USER'S DEVICE IS DESKTOP OR MOBILE ---------------------
 const checkMediaQuery = () => window.matchMedia("(min-width: 1200px)")
-const mql = checkMediaQuery()
+const deviceWidth = checkMediaQuery()
 
 // get all the horizontal position difference between hero buttons and nav buttons
 const setNavBtnsPositions = () =>
@@ -117,53 +117,51 @@ const setNavBtnsPositions = () =>
   )
 
 // if user on desktop
-const checkDeviceSize = function (mql) {
-  if (mql.matches) {
+const checkDeviceSize = function (deviceWidth) {
+  // remove the existing social media icons firs
+  const socialMediaContainer = document.body.querySelector(
+    ".social-media-container"
+  )
+  if (socialMediaContainer) socialMediaContainer.remove()
+
+  if (deviceWidth.matches) {
     diffXArray = setNavBtnsPositions()
-    navBtns.forEach((btn) => {
-      btn.classList.add("hidden")
-      btn.classList.remove("btn")
-    })
-
-    // move nav buttons to hero buttons' x position
     navBtns.forEach((btn, i) => {
-      btn.style.transform = `translateX(${diffXArray[i]}px)`
+      btn.classList.add("hidden")
+      // move nav buttons to hero buttons' x position (6px = 2side of border width)
+      btn.style.transform = `translateX(${diffXArray[i] - 6}px)`
     })
 
-    // insert social media to the right location
-    if (!document.body.querySelector(".social-media-container"))
-      document.body.insertAdjacentHTML("beforeend", socialMediaGroup)
+    document.body.insertAdjacentHTML("beforeend", socialMediaGroup)
   } else {
-    if (!navList.querySelector(".social-media-container"))
-      navList.insertAdjacentHTML("beforeend", socialMediaGroup)
+    navList.insertAdjacentHTML("beforeend", socialMediaGroup)
   }
 }
 
-checkDeviceSize(mql)
+checkDeviceSize(deviceWidth)
 
 const mediaObserver = new ResizeObserver((entries) => {
   const [entry] = entries
-  // console.log(entry.contentRect.width)
   if (entry.contentRect.width >= 1200 || entry.contentRect.width <= 425) {
-    checkDeviceSize(mql)
+    checkDeviceSize(deviceWidth)
   }
 })
 
 mediaObserver.observe(document.body)
 
 // SECTION FUNCTIONS FOR MOBILE ----------------------------------
-// toggle meun >>>>>>>>>>>>>>>>>>>>>
-const showMobileMeun = function () {
-  navList.classList.toggle("meun-show")
+// toggle menu >>>>>>>>>>>>>>>>>>>>>
+const showMobileMenu = function () {
+  navList.classList.toggle("menu-show")
 }
 
 nav.addEventListener("click", (e) => {
-  if (e.target.closest("div").classList.contains("burger-meun"))
-    showMobileMeun()
+  if (e.target.closest("div").classList.contains("burger-menu"))
+    showMobileMenu()
 })
 
 // scroll progress bar >>>>>>>>>>>>>>>>>>>>>
-let lastKnownScrollPostion = 0
+let lastKnownScrollPosition = 0
 let ticking = false
 
 const renderScrollProgress = function (scrollPosition) {
@@ -175,11 +173,11 @@ const renderScrollProgress = function (scrollPosition) {
 document.addEventListener(
   "scroll",
   () => {
-    lastKnownScrollPostion = scrollY
+    lastKnownScrollPosition = scrollY
 
     if (!ticking) {
       window.requestAnimationFrame(() => {
-        renderScrollProgress(lastKnownScrollPostion)
+        renderScrollProgress(lastKnownScrollPosition)
         ticking = false
       })
       ticking = true
@@ -190,7 +188,7 @@ document.addEventListener(
   }
 )
 
-if (!mql.matches) {
+if (!deviceWidth.matches) {
   window.addEventListener("scroll", renderScrollProgress)
 } else {
   window.removeEventListener("scroll", renderScrollProgress)
@@ -240,8 +238,8 @@ const btnObserveFunc = function (entries) {
       entry.target.style.transition = `opacity 0s .2s`
 
       navTarget.classList.add("hidden")
-      navTarget.style.transition = `opacity 0s .2s, transform .2s`
       navTarget.style.transform = `translateX(${diffXArray[index]}px)`
+      navTarget.style.transition = `opacity 0s .2s, transform .2s`
     }
   })
 }
@@ -253,7 +251,7 @@ const btnObserver = new IntersectionObserver(btnObserveFunc, {
 
 const showNavBtns = function () {
   navBtns.forEach((btn) => {
-    btn.setAttribute("style", "")
+    btn.style = ""
     btn.classList.remove("hidden")
   })
 }
@@ -267,6 +265,7 @@ heroBtns.forEach((btn) => {
 // hero buttons and nav buttons change to active state >>>>>>>>>>>>>
 const btnActivate = function (e) {
   navBtns.forEach((btn) => btn.classList.remove("active"))
+  // except the last button (resume download link)
   if (+e.currentTarget.dataset.index !== navBtns.length)
     navBtns[e.currentTarget.dataset.index - 1].classList.add("active")
 }
@@ -325,9 +324,8 @@ const workArray = await getWorkDate("./data-work.json")
 const renderWorkList = function () {
   const workName = workArray
     .map(
-      (work) => `
-    <li class="work__item">${work.projectName}</li>
-  `
+      // prettier-ignore
+      (work) => `<li class="work__item">${work.projectName}</li>`
     )
     .join("")
 
@@ -360,6 +358,18 @@ const showCurrentWork = function (workArray, target = undefined) {
         .join("")}
       <div class="work__description">
         ${workArray[currentWork].description}
+         <p><a href=${
+           workArray[currentWork].url
+         } class="work__link" target="_blank">visit site</a></p>
+        <div class="tech-group">
+          ${workArray[currentWork].technical
+            .map(
+              (tech) => `
+            <span class="tech-tag">${tech}</span>
+          `
+            )
+            .join("")}
+        </div>
       </div>
     </div>
   `
@@ -382,10 +392,10 @@ workList.addEventListener("click", (e) => {
   const workItem = e.target.closest(".work__item")
   if (workItem) showCurrentWork(workArray, e.target)
 
-  if (workItem && !mql.matches) workDetail.classList.add("active")
-  // workDetail.closest(".work-detail").classList.add("active")
+  // for mobile version show the project details
+  if (workItem && !deviceWidth.matches) workDetail.classList.add("active")
 })
 
 workDetail.addEventListener("click", (e) => {
-  if (!mql.matches) e.currentTarget.classList.remove("active")
+  if (!deviceWidth.matches) e.currentTarget.classList.remove("active")
 })
