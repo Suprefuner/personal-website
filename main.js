@@ -134,13 +134,14 @@ const checkDeviceSize = function (deviceWidth) {
     })
 
     document.body.insertAdjacentHTML("beforeend", socialMediaGroup)
+    navBtns.forEach((btn) => btn.removeEventListener("click", showMobileMenu))
   } else {
     navList.insertAdjacentHTML("beforeend", socialMediaGroup)
+    navBtns.forEach((btn) => btn.addEventListener("click", showMobileMenu))
   }
 }
 
 checkDeviceSize(deviceWidth)
-console.log(diffXArray)
 
 const mediaObserver = new ResizeObserver((entries) => {
   const [entry] = entries
@@ -152,8 +153,7 @@ const mediaObserver = new ResizeObserver((entries) => {
 mediaObserver.observe(document.body)
 
 // SECTION FUNCTIONS FOR MOBILE ----------------------------------
-// toggle menu >>>>>>>>>>>>>>>>>>>>>
-const showMobileMenu = function () {
+function showMobileMenu() {
   navList.classList.toggle("menu-show")
 }
 

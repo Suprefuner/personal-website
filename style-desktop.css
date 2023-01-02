@@ -22,6 +22,10 @@
     border: 5px solid black;
   }
 
+  .section-content {
+    margin-inline: 2rem;
+  }
+
   /* SECTION UILITY CLASS ----------------------- */
   .mobile {
     display: none;
@@ -312,6 +316,7 @@
 
   .work__item:hover {
     color: var(--color-hover);
+    font-size: 2.5rem;
     letter-spacing: 2px;
   }
 
@@ -427,7 +432,16 @@
     z-index: -100;
   }
 
+  .connect-form {
+    padding-right: 3rem;
+  }
+
   .btn--submit {
     cursor: pointer;
+  }
+
+  .btn--submit:hover {
+    color: var(--color-white);
+    background-position: 100%;
   }
 }
