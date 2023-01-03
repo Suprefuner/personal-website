@@ -311,12 +311,12 @@
 
   .work__item {
     cursor: pointer;
+    font-size: 2.5rem;
     transition: 0.2s;
   }
 
   .work__item:hover {
     color: var(--color-hover);
-    font-size: 2.5rem;
     letter-spacing: 2px;
   }
 
